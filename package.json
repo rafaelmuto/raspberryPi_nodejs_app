@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/rafaelmuto/raspberryPi_nodejs_app#readme",
   "dependencies": {
-    "sense-hat": "^0.1.0"
+    "sense-hat-joystick": "^0.2.0",
+    "sense-hat-led": "^1.0.1"
   }
 }
