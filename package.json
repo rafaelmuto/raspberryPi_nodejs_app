@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/rafaelmuto/raspberryPi_nodejs_app/issues"
   },
-  "homepage": "https://github.com/rafaelmuto/raspberryPi_nodejs_app#readme"
+  "homepage": "https://github.com/rafaelmuto/raspberryPi_nodejs_app#readme",
+  "dependencies": {
+    "sense-hat": "^0.1.0"
+  }
 }
