@@ -1,0 +1,24 @@
+{
+  "name": "raspberrypi_nodejs_app",
+  "version": "1.0.0",
+  "description": "a raspberry pi + node.js application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelmuto/raspberryPi_nodejs_app.git"
+  },
+  "keywords": [
+    "node.js",
+    "raspberry",
+    "pi"
+  ],
+  "author": "rafaelmuto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaelmuto/raspberryPi_nodejs_app/issues"
+  },
+  "homepage": "https://github.com/rafaelmuto/raspberryPi_nodejs_app#readme"
+}
