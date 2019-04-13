@@ -18,6 +18,6 @@ joystick.on("right", () => {
   console.log("all right!");
 });
 
-joystick.on("middle", () => {
+joystick.on("enter", () => {
   console.log("outch!");
 });
