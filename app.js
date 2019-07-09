@@ -1,11 +1,21 @@
-console.log('==> running app.js', 'background: #222; color: #bada55');
+console.log('==> running app.js');
 
 const express = require('express');
+const Datastore = require('nedb');
 const led = require('sense-hat-led');
+const Joystick = require('sense-hat-joystick').Joystick;
 
 // starting express.js:
 const app = express();
-
+// starting neDB:
+const db = new Datastore('database.db');
+db.loadDatabase();
+// sense-hat joystick:
+const joystick = new Joystick();
+joystick.on('enter', () => {
+  led.sync.clear();
+});
+// clearing led matrix:
 led.sync.clear();
 
 // ==> middlewares:
