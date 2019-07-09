@@ -24,6 +24,7 @@
   "homepage": "https://github.com/rafaelmuto/raspberryPi_nodejs_app#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "nedb": "^1.8.0",
     "sense-hat-joystick": "^0.2.0",
     "sense-hat-led": "^1.0.1"
   },
