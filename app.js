@@ -15,6 +15,10 @@ const joystick = new Joystick();
 joystick.on('enter', () => {
   led.sync.clear();
 });
+joystick.on('up', () => {
+  led.sync.clear(128, 128, 128);
+});
+
 // clearing led matrix:
 led.sync.clear();
 
