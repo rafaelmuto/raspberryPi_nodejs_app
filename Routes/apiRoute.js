@@ -24,3 +24,5 @@ router.get('/matrix/:red/:green/:blue', (req, res, nxt) => {
       req.params.blue
   );
 });
+
+module.exports = router;
