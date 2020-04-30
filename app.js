@@ -43,10 +43,8 @@ app.use('/', (req, res, nxt) => {
   res.send('hello world from raspberry pi + sensehat');
 });
 
-app
-  .listen(8080, () => {
-    led.sync.clear();
-    console.log('-> starting server @ port 8080');
-    led.sync.clear(32, 160, 16);
-  })
-  .catch(err => console.log(err));
+app.listen(8080, () => {
+  led.sync.clear();
+  console.log('-> starting server @ port 8080');
+  led.sync.clear(32, 160, 16);
+});
