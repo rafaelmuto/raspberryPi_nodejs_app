@@ -46,5 +46,5 @@ app.use('/', (req, res, nxt) => {
 app.listen(8080, () => {
   led.sync.clear();
   console.log('-> starting server @ port 8080');
-  led.sync.showMessage('raspberry pi nodeJS server on...', 0.1);
+  led.sync.showMessage('raspberry pi nodeJS server on...', 0.1 / 2);
 });
