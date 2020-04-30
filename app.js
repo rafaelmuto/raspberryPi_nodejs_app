@@ -49,9 +49,14 @@ app.use('/', (req, res, nxt) => {
   res.send('hello world from raspberry pi + sensehat');
 });
 
-app.use((req, res, nxt) => {
+app.use('*', (req, res, nxt) => {
   console.log('=> Err404');
   res.status(404).send('Err404');
+});
+
+app.use((err, req, res, nxt) => {
+  console.log('==> errorController: get500');
+  res.status(500).send('Err500');
 });
 
 app.listen(8080, () => {
