@@ -5,7 +5,7 @@ const Datastore = require('nedb');
 const led = require('sense-hat-led');
 const Joystick = require('sense-hat-joystick').Joystick;
 
-const apiRouter = require('./Routes/apiRoute');
+const apiRouter = require('./Routes/apiRouter');
 
 // starting express.js:
 const app = express();
@@ -19,11 +19,6 @@ let RGB = [0, 0, 0];
 joystick.on('up', () => {
   RGB = [0, 0, 0];
   led.sync.clear();
-  console.log('=>' + RGB);
-});
-joystick.on('up', () => {
-  RGB = [Math.random() * 255, Math.random() * 255, Math.random() * 255];
-  led.sync.clear(RGB);
   console.log('=>' + RGB);
 });
 joystick.on('left', () => {
