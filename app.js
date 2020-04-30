@@ -16,33 +16,38 @@ const joystick = new Joystick();
 let RGB = [0, 0, 0];
 joystick.on('up', () => {
   RGB = [0, 0, 0];
+  led.sync.clear();
+  console.log('=>' + RGB);
+});
+joystick.on('up', () => {
+  RGB = [Math.random() * 255, Math.random() * 255, Math.random() * 255];
   led.sync.clear(RGB);
+  console.log('=>' + RGB);
 });
 joystick.on('left', () => {
-  RGB[0] += 2;
+  RGB[0] += 10;
   led.sync.clear(RGB);
   console.log('=>' + RGB);
 });
 joystick.on('down', () => {
-  RGB[1] += 2;
+  RGB[1] += 10;
   led.sync.clear(RGB);
   console.log('=>' + RGB);
 });
 joystick.on('right', () => {
-  RGB[2] += 2;
+  RGB[2] += 10;
   led.sync.clear(RGB);
   console.log('=>' + RGB);
 });
-
-// clearing led matrix:
-led.sync.clear();
 
 // ==> middlewares:
 app.use('/', (req, res, nxt) => {
   res.send('hello world from raspberry pi + sensehat');
 });
+app.use('/api', require('./Routes/apiRoute'));
 
 app.listen(8080, () => {
+  led.sync.clear();
   console.log('-> starting server @ port 8080');
   led.sync.clear(32, 160, 16);
 });
