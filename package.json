@@ -14,7 +14,8 @@
   "keywords": [
     "node.js",
     "raspberry",
-    "pi"
+    "pi",
+    "sense-hat"
   ],
   "author": "rafaelmuto",
   "license": "ISC",

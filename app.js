@@ -10,13 +10,25 @@ const app = express();
 // starting neDB:
 const db = new Datastore('database.db');
 db.loadDatabase();
+
 // sense-hat joystick:
 const joystick = new Joystick();
-joystick.on('enter', () => {
-  led.sync.clear();
-});
+let RGB = [0, 0, 0];
 joystick.on('up', () => {
-  led.sync.clear(128, 128, 128);
+  RGB = [0, 0, 0];
+  led.sync.clear(RGB);
+});
+joystick.on('left', () => {
+  RGB[0]++;
+  led.sync.clear(RGB);
+});
+joystick.on('down', () => {
+  RGB[1]++;
+  led.sync.clear(RGB);
+});
+joystick.on('right', () => {
+  RGB[2]++;
+  led.sync.clear(RGB);
 });
 
 // clearing led matrix:
@@ -29,5 +41,5 @@ app.use('/', (req, res, nxt) => {
 
 app.listen(8080, () => {
   console.log('-> starting server @ port 8080');
-  led.sync.clear(32, 255, 16);
+  led.sync.clear(32, 160, 16);
 });
