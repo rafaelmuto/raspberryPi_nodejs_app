@@ -13,7 +13,7 @@ const app = express();
 const db = new Datastore('database.db');
 db.loadDatabase();
 
-// sense-hat joystick:
+// sense-hat joystick test:
 const joystick = new Joystick();
 let RGB = [0, 0, 0];
 joystick.on('up', () => {
@@ -38,13 +38,15 @@ joystick.on('right', () => {
 });
 
 // ==> middlewares:
+app.use('/api', apiRouter);
 app.use('/', (req, res, nxt) => {
   res.send('hello world from raspberry pi + sensehat');
 });
-app.use('/api', apiRouter);
 
-app.listen(8080, () => {
-  led.sync.clear();
-  console.log('-> starting server @ port 8080');
-  led.sync.clear(32, 160, 16);
-});
+app
+  .listen(8080, () => {
+    led.sync.clear();
+    console.log('-> starting server @ port 8080');
+    led.sync.clear(32, 160, 16);
+  })
+  .catch(err => console.log(err));
