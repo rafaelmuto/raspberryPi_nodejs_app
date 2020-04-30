@@ -19,15 +19,15 @@ joystick.on('up', () => {
   led.sync.clear(RGB);
 });
 joystick.on('left', () => {
-  RGB[0]++;
+  RGB[0] = 128;
   led.sync.clear(RGB);
 });
 joystick.on('down', () => {
-  RGB[1]++;
+  RGB[1] = 128;
   led.sync.clear(RGB);
 });
 joystick.on('right', () => {
-  RGB[2]++;
+  RGB[2] = 128;
   led.sync.clear(RGB);
 });
 
