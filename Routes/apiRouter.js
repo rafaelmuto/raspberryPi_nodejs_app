@@ -9,19 +9,13 @@ router.get('/', (req, res, nxt) => {
 });
 
 router.get('/matrix/:red/:green/:blue', (req, res, nxt) => {
-  console.log('=>/api/matrix/:R/:G/:B');
-
   const RGB = [req.params.red, req.params.green, req.params.blue];
+
+  console.log(RGB);
+
   led.sync.clear(RGB);
 
-  res.send(
-    '=>/api/matrix/' +
-      req.params.red +
-      '/' +
-      req.params.green +
-      '/' +
-      req.params.blue
-  );
+  res.send('=> matrix:' + RGB);
 });
 
 module.exports = router;
