@@ -9,7 +9,11 @@ router.get('/', (req, res, nxt) => {
 });
 
 router.get('/matrix/:red/:green/:blue', (req, res, nxt) => {
-  const RGB = [req.params.red, req.params.green, req.params.blue];
+  const RGB = [
+    parseInt(req.params.red),
+    parseInt(req.params.green),
+    parseInt(req.params.blue)
+  ];
 
   console.log(RGB);
 
