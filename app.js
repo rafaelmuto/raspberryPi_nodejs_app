@@ -5,6 +5,8 @@ const Datastore = require('nedb');
 const led = require('sense-hat-led');
 const Joystick = require('sense-hat-joystick').Joystick;
 
+const apiRouter = require('./Routes/apiRoute');
+
 // starting express.js:
 const app = express();
 // starting neDB:
@@ -44,7 +46,7 @@ joystick.on('right', () => {
 app.use('/', (req, res, nxt) => {
   res.send('hello world from raspberry pi + sensehat');
 });
-app.use('/api', require('./Routes/apiRoute'));
+app.use('/api', apiRouter);
 
 app.listen(8080, () => {
   led.sync.clear();
