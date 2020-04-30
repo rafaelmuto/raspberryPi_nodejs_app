@@ -19,16 +19,19 @@ joystick.on('up', () => {
   led.sync.clear(RGB);
 });
 joystick.on('left', () => {
-  RGB[0] = 128;
+  RGB[0] += 2;
   led.sync.clear(RGB);
+  console.log('=>' + RGB);
 });
 joystick.on('down', () => {
-  RGB[1] = 128;
+  RGB[1] += 2;
   led.sync.clear(RGB);
+  console.log('=>' + RGB);
 });
 joystick.on('right', () => {
-  RGB[2] = 128;
+  RGB[2] += 2;
   led.sync.clear(RGB);
+  console.log('=>' + RGB);
 });
 
 // clearing led matrix:
