@@ -22,4 +22,14 @@ router.get('/matrix/:red/:green/:blue', (req, res, nxt) => {
   res.send('=> matrix:' + RGB);
 });
 
+router.get('/led/showtxt/:msg', (req, res, nxt) => {
+  let msg = req.param.msg;
+  console.log('==> LED Display Message: ' + msg);
+  led.sync.clear();
+  led.sync.showMessage(msg, 0.1 / 2);
+  led.sync.clear();
+
+  res.status(200).json({ msg: msg });
+});
+
 module.exports = router;
