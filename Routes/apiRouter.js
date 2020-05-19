@@ -23,7 +23,7 @@ router.get('/matrix/:red/:green/:blue', (req, res, nxt) => {
 });
 
 router.get('/led/showtxt/:msg', (req, res, nxt) => {
-  let msg = req.param.msg;
+  let msg = req.params.msg;
   console.log('==> LED Display Message: ' + msg);
   led.sync.clear();
   led.sync.showMessage(msg, 0.1 / 2);
