@@ -4,8 +4,9 @@
 }
 
 .main_container {
+  padding: 1rem;
   width: 500px;
   margin: 1rem auto;
-  border-radius: 5px;
-  border: 1px solid black;
+  border-radius: 2rem;
+  border: 2px solid black;
 }
