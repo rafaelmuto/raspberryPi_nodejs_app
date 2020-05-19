@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+.main_container {
+  width: 500px;
+  margin: 1rem auto;
+  border-radius: 5px;
+  border: 1px solid black;
+}
