@@ -46,7 +46,7 @@ joystick.on('right', () => {
 app.use('/api', apiRouter);
 
 app.use('/', (req, res, nxt) => {
-  res.send('hello world from raspberry pi + sensehat');
+  res.render('main');
 });
 
 app.use('*', (req, res, nxt) => {
@@ -55,7 +55,7 @@ app.use('*', (req, res, nxt) => {
 });
 
 app.use((err, req, res, nxt) => {
-  console.log('==> errorController: get500');
+  console.log('=> Err500');
   res.status(500).send('Err500');
 });
 
