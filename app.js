@@ -46,7 +46,7 @@ joystick.on('right', () => {
 app.use('/api', apiRouter);
 
 app.use('/', (req, res, nxt) => {
-  res.render('main');
+  return res.render('main');
 });
 
 app.use('*', (req, res, nxt) => {
