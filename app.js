@@ -15,8 +15,9 @@ const db = new Datastore('database.db');
 db.loadDatabase();
 // setting view engine:
 app.set('view engine', 'pug');
+app.set('views', 'Views');
 // serving static files folder:
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'Public')));
 
 // sense-hat joystick test:
 const joystick = new Joystick();
