@@ -23,8 +23,6 @@ document.getElementById('api_led_fill_btn').addEventListener('click', () => {
     else return color;
   });
 
-  console.log(RGB);
-
   fetch('/api/led/fill/' + RGB[0] + '/' + RGB[1] + '/' + RGB[2])
     .then(res => res.json())
     .then(data => console.log(data))
