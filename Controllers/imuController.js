@@ -14,6 +14,8 @@ exports.getData = (req, res, nxt) => {
       return;
     }
 
+    console.log(data);
+
     let dataJson = {
       Accelleration: JSON.stringify(data.accel, null, '  '),
       Gyroscope: JSON.stringify(data.gyro, null, '  '),
