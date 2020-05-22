@@ -1,8 +1,6 @@
 console.log('main.js');
 
 document.getElementById('api_led_clear_btn').addEventListener('click', () => {
-  console.log('api_led_clear_btn clicked!');
-
   fetch('/api/led/clear')
     .then(res => res.json())
     .then(data => console.log(data))
@@ -10,8 +8,6 @@ document.getElementById('api_led_clear_btn').addEventListener('click', () => {
 });
 
 document.getElementById('api_led_fill_btn').addEventListener('click', () => {
-  console.log('api_led_fill_btn clicked');
-
   let RGB = [
     parseInt(document.getElementById('led_fill_R').value),
     parseInt(document.getElementById('led_fill_G').value),
@@ -33,8 +29,6 @@ document.getElementById('api_led_fill_btn').addEventListener('click', () => {
 document
   .getElementById('api_led_text_std_btn')
   .addEventListener('click', () => {
-    console.log('api_led_text_std_btn clicked!');
-
     const text = document.getElementById('led_text_std').value;
 
     fetch('/api/led/showtxt/' + text)
@@ -44,8 +38,6 @@ document
   });
 
 document.getElementById('api_imu_getdata_btn').addEventListener('click', () => {
-  console.log('api_imu_getdata_btn clicked!');
-
   fetch('/api/imu/getdata/')
     .then(res => res.json())
     .then(data => console.log(data))
