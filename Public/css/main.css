@@ -40,7 +40,7 @@ hr {
   border: 1px solid black;
   border-radius: 0.5rem;
   display: grid;
-  grid-template-columns: 90% 10%;
+  grid-template-columns: 85% 15%;
 }
 
 .api_item_main {
