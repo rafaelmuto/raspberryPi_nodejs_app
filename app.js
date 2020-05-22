@@ -47,7 +47,7 @@ joystick.on('right', () => {
 app.use('/api', apiRouter);
 
 app.use('/', (req, res, nxt) => {
-  return res.render('main');
+  return res.sendFile(__dirname + './public/html/main.html');
 });
 
 app.use('*', (req, res, nxt) => {
