@@ -14,7 +14,7 @@ exports.getData = (req, res, nxt) => {
       return;
     }
 
-    let data = {
+    let dataJson = {
       Accelleration: JSON.stringify(data.accel, null, '  '),
       Gyroscope: JSON.stringify(data.gyro, null, '  '),
       Compass: JSON.stringify(data.compass, null, '  '),
@@ -25,5 +25,5 @@ exports.getData = (req, res, nxt) => {
     };
   });
 
-  res.status(200).json({ msg: 'IMU sensor data.', data: data });
+  res.status(200).json({ msg: 'IMU sensor data.', data: dataJson });
 };
