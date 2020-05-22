@@ -20,27 +20,18 @@ app.set('views', 'Views');
 app.use(express.static(path.join(__dirname, 'Public')));
 
 // sense-hat joystick test:
-const joystick = new Joystick();
-let RGB = [0, 0, 0];
-joystick.on('up', () => {
-  RGB = [0, 0, 0];
-  led.sync.clear();
-  console.log('=>' + RGB);
-});
-joystick.on('left', () => {
-  RGB[0] += 10;
-  led.sync.clear(RGB);
-  console.log('=>' + RGB);
-});
-joystick.on('down', () => {
-  RGB[1] += 10;
-  led.sync.clear(RGB);
-  console.log('=>' + RGB);
-});
-joystick.on('right', () => {
-  RGB[2] += 10;
-  led.sync.clear(RGB);
-  console.log('=>' + RGB);
+Joystick.getJoystick().then(joystick => {
+  joystick.on('press', direction => {
+    console.log('Joystick pressed in ' + direction + ' direction');
+  });
+  joystick.on('release', direction => {
+    console.log('Joystick released in ' + direction + ' direction');
+  });
+  joystick.on('hold', direction => {
+    console.log(
+      'The joystick is being held in the ' + direction + ' direction'
+    );
+  });
 });
 
 // ==> middlewares:
