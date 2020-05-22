@@ -4,7 +4,7 @@ const express = require('express');
 const path = require('path');
 const Datastore = require('nedb');
 const led = require('sense-hat-led');
-const Joystick = require('sense-hat-joystick').Joystick;
+const Joystick = require('node-sense-hat').Joystick;
 
 const apiRouter = require('./Routes/apiRouter');
 
