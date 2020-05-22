@@ -11,10 +11,6 @@ exports.getData = (req, res, nxt) => {
         error: err
       });
     }
-    return data;
-  }).then(data => {
-    console.log(data);
-
     res.status(200).json({ msg: 'IMU sensor data.', data: data });
   });
 };
