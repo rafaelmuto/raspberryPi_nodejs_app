@@ -10,10 +10,9 @@ exports.getData = (req, res, nxt) => {
         data: null,
         error: err
       });
-
-      return;
     }
-
+    return data;
+  }).then(data => {
     console.log(data);
 
     let dataJson = {
@@ -25,7 +24,7 @@ exports.getData = (req, res, nxt) => {
       Pressure: data.pressure,
       Humidity: data.humidity
     };
-  });
 
-  res.status(200).json({ msg: 'IMU sensor data.', data: dataJson });
+    res.status(200).json({ msg: 'IMU sensor data.', data: dataJson });
+  });
 };
