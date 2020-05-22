@@ -13,10 +13,10 @@ exports.fillMatrixRGB = (req, res, nxt) => {
     parseInt(req.params.blue)
   ];
 
-  RGB.forEach(color => {
+  RGB.map(color => {
     color = parseInt(color);
+    if (isNaN(color) || color < 0) return 0;
     if (color > 255) return 255;
-    if (color < 0) return 0;
     else return color;
   });
 
