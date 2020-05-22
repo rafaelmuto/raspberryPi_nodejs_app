@@ -15,16 +15,6 @@ exports.getData = (req, res, nxt) => {
   }).then(data => {
     console.log(data);
 
-    let dataJson = {
-      Accelleration: JSON.stringify(data.accel, null, '  '),
-      Gyroscope: JSON.stringify(data.gyro, null, '  '),
-      Compass: JSON.stringify(data.compass, null, '  '),
-      Fusion: JSON.stringify(data.fusionPose, null, '  '),
-      Temperature: data.temperature,
-      Pressure: data.pressure,
-      Humidity: data.humidity
-    };
-
-    res.status(200).json({ msg: 'IMU sensor data.', data: dataJson });
+    res.status(200).json({ msg: 'IMU sensor data.', data: data });
   });
 };
