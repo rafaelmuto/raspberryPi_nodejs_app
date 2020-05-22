@@ -28,6 +28,7 @@
     "ip": "^1.1.5",
     "nedb": "^1.8.0",
     "nodeimu": "^2.1.12",
+    "nodemon": "^2.0.4",
     "pug": "^2.0.4",
     "sense-hat-joystick": "^0.2.0",
     "sense-hat-led": "^1.0.1"
