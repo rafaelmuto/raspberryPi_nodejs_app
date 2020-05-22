@@ -14,6 +14,7 @@ exports.fillMatrixRGB = (req, res, nxt) => {
   ];
 
   RGB.forEach(color => {
+    color = parseInt(color);
     if (color > 255) return 255;
     if (color < 0) return 0;
     else return color;
