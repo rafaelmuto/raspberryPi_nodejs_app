@@ -11,17 +11,20 @@ document.getElementById('api_led_clear_btn').addEventListener('click', () => {
 document.getElementById('api_led_fill_btn').addEventListener('click', () => {
   console.log('api_led_fill_btn clicked');
 
-  let R = parseInt(document.getElementById('led_fill_R').value);
-  let G = parseInt(document.getElementById('led_fill_G').value);
-  let B = parseInt(document.getElementById('led_fill_B').value);
+  let RGB = [
+    parseInt(document.getElementById('led_fill_R').value),
+    parseInt(document.getElementById('led_fill_G').value),
+    parseInt(document.getElementById('led_fill_B').value)
+  ];
 
-  if (R == null) R = 0;
-  if (G == null) G = 0;
-  if (B == null) B = 0;
+  RGB = RGB.map(color => {
+    if (isNaN(color) || color < 0) return 0;
+    if (color > 255) return 255;
+  });
 
-  console.log(R, G, B);
+  console.log(RGB);
 
-  fetch('/api/led/fill/' + R + '/' + G + '/' + B)
+  fetch('/api/led/fill/' + RGB[0] + '/' + RGB[1] + '/' + RGB[2])
     .then(res => res.json())
     .then(data => console.log(data))
     .catch(err => console.log(err));
