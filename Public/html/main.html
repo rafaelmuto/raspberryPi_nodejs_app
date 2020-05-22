@@ -39,7 +39,7 @@
       <div class="api_item">
         <div class="api_item_main">
           <div class="api_item_main_header">
-            <p>Fill Led Matrix: RGB</p>
+            <p>Fill Led Matrix RGB</p>
             <hr />
           </div>
           <div class="api_item_main_body">
@@ -54,10 +54,24 @@
               Fill the led matrix with a single color. Values must be from 0 to
               255.
             </p>
-            <p class="code">/api/led/fill/:R/:G/:B</p>
+            <p class="code">/led/fill/:red/:green/:blue</p>
           </div>
         </div>
         <button id="api_led_fill_btn">Fill</button>
+      </div>
+
+      <div class="api_item">
+        <div class="api_item_main">
+          <div class="api_item_main_header">
+            <p>Show Text Standard</p>
+            <hr />
+          </div>
+          <div class="api_item_main_body">
+            <input id="led_text_std" type="text" />
+            <p class="code">/led/showtxt/:txt</p>
+          </div>
+        </div>
+        <button id="api_led_text_std_btn">Show</button>
       </div>
 
       <div class="api_item">
