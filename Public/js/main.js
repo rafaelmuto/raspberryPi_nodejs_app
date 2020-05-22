@@ -11,13 +11,15 @@ document.getElementById('api_led_clear_btn').addEventListener('click', () => {
 document.getElementById('api_led_fill_btn').addEventListener('click', () => {
   console.log('api_led_fill_btn clicked');
 
-  let R = document.getElementById('led_fill_R').value;
-  let G = document.getElementById('led_fill_G').value;
-  let B = document.getElementById('led_fill_B').value;
+  let R = parseInt(document.getElementById('led_fill_R').value);
+  let G = parseInt(document.getElementById('led_fill_G').value);
+  let B = parseInt(document.getElementById('led_fill_B').value);
 
-  if (R == null || !Number.isInteger(R)) R = 0;
-  if (G == null || !Number.isInteger(G)) G = 0;
-  if (B == null || !Number.isInteger(B)) B = 0;
+  if (R == null) R = 0;
+  if (G == null) G = 0;
+  if (B == null) B = 0;
+
+  console.log(R, G, B);
 
   fetch('/api/led/fill/' + R + '/' + G + '/' + B)
     .then(res => res.json())
