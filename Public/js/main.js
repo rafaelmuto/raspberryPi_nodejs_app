@@ -20,6 +20,7 @@ document.getElementById('api_led_fill_btn').addEventListener('click', () => {
   RGB = RGB.map(color => {
     if (isNaN(color) || color < 0) return 0;
     if (color > 255) return 255;
+    else return color;
   });
 
   console.log(RGB);
