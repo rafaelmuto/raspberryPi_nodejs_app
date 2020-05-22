@@ -15,6 +15,10 @@ document.getElementById('api_led_fill_btn').addEventListener('click', () => {
   let G = document.getElementById('led_fill_G').value;
   let B = document.getElementById('led_fill_B').value;
 
+  if (!R && Number.isInteger(R)) R = 0;
+  if (!G && Number.isInteger(G)) G = 0;
+  if (!B && Number.isInteger(B)) B = 0;
+
   fetch('/api/led/fill/' + R + '/' + G + '/' + B)
     .then(res => res.json())
     .then(data => console.log(data))
