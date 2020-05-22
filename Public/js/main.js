@@ -42,3 +42,12 @@ document
       .then(data => console.log(data))
       .catch(err => console.log(err));
   });
+
+document.getElementById('api_imu_getdata_btn').addEventListener('click', () => {
+  console.log('api_imu_getdata_btn clicked!');
+
+  fetch('/api/imu/getdata/')
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+});
