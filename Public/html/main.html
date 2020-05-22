@@ -27,8 +27,9 @@
           </div>
           <div class="api_item_main_body">
             <p>
-              Clear the led matrix from previous writtings.
+              Clear the led matrix from previous state.
             </p>
+            <p class="code">/api/led/clear</p>
           </div>
         </div>
         <button id="api_led_clear_btn">Clear</button>
@@ -44,6 +45,11 @@
             <input id="led_fill_R" type="text" placeholder="RED (0 - 255)" />
             <input id="led_fill_G" type="text" placeholder="GREEN (0 - 255)" />
             <input id="led_fill_B" type="text" placeholder="BLUE (0 - 255)" />
+            <p>
+              Fill the led matrix with a single color. Values must be from 0 to
+              255.
+            </p>
+            <p class="code">/api/led/fill/:R/:G/:B</p>
           </div>
         </div>
         <button id="api_led_fill_btn">Fill</button>
@@ -62,6 +68,7 @@
               explicabo cum, amet suscipit nobis dolores animi quae provident,
               dignissimos perspiciatis distinctio. Laboriosam, ratione.
             </p>
+            <p class="code">/api/route/here</p>
           </div>
         </div>
         <button id="">Api btn</button>

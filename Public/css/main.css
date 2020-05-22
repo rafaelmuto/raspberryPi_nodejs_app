@@ -16,6 +16,14 @@ hr {
   border: 2px solid black;
 }
 
+.code {
+  margin-top: 0.5rem !important;
+  font-size: 0.7rem;
+  border-radius: 0.2rem;
+  background-color: #ddd;
+  padding: 0.3rem;
+}
+
 .main_container h1 {
   margin: 0;
   margin-top: 2rem;
