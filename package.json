@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/rafaelmuto/raspberryPi_nodejs_app#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "nedb": "^1.8.0",
     "node-sense-hat": "0.0.2",
     "nodemon": "^2.0.4",
